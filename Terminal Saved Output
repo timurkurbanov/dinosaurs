@@ -1,0 +1,1851 @@
+Last login: Tue May 21 16:51:04 on ttys002
+Tims-MacBook-Air:~ timkur$ cd Desktop/GA/week_
+-bash: cd: Desktop/GA/week_: No such file or directory
+Tims-MacBook-Air:~ timkur$ cd Desktop/GA/week_4
+Tims-MacBook-Air:week_4 timkur$ ls
+Reinforcing-Exercises-Collections	intro_to_sql
+Tims-MacBook-Air:week_4 timkur$ cd intro_to_sql/
+Tims-MacBook-Air:intro_to_sql timkur$ ls
+answer.txt		intro_sql_erd.png
+intro.sql		readme.md
+Tims-MacBook-Air:intro_to_sql timkur$ git init
+Reinitialized existing Git repository in /Users/timkur/Desktop/GA/week_4/intro_to_sql/.git/
+Tims-MacBook-Air:intro_to_sql timkur$ git add .
+Tims-MacBook-Air:intro_to_sql timkur$ git commit -m "done"
+[master e5f9ed1] done
+ 1 file changed, 26 insertions(+)
+ create mode 100644 answer.txt
+Tims-MacBook-Air:intro_to_sql timkur$ git push origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 637 bytes | 637.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/timurkurbanov/intro_to_sql.git
+   577ec29..e5f9ed1  master -> master
+Tims-MacBook-Air:intro_to_sql timkur$ ls
+answer.txt		intro_sql_erd.png
+intro.sql		readme.md
+Tims-MacBook-Air:intro_to_sql timkur$ cd ..
+Tims-MacBook-Air:week_4 timkur$ ls
+Reinforcing-Exercises-Collections	intro_to_sql
+dinosaurs
+Tims-MacBook-Air:week_4 timkur$ cd dinosaurs/
+Tims-MacBook-Air:dinosaurs timkur$ ls
+README.md	dinos.sql
+Tims-MacBook-Air:dinosaurs timkur$ code .
+Tims-MacBook-Air:dinosaurs timkur$ createdb dinosaurs
+Tims-MacBook-Air:dinosaurs timkur$ psql dinosaurs < dino.sql
+-bash: dino.sql: No such file or directory
+Tims-MacBook-Air:dinosaurs timkur$ psql dinosaurs < dinos.sql
+SET
+SET
+SET
+SET
+SET
+SET
+SET
+CREATE EXTENSION
+COMMENT
+SET
+SET
+SET
+CREATE TABLE
+ALTER TABLE
+CREATE TABLE
+ALTER TABLE
+CREATE SEQUENCE
+ALTER TABLE
+ALTER SEQUENCE
+CREATE TABLE
+ALTER TABLE
+ALTER TABLE
+COPY 1
+COPY 331
+ setval 
+--------
+    331
+(1 row)
+
+COPY 3
+ALTER TABLE
+ALTER TABLE
+ALTER TABLE
+REVOKE
+REVOKE
+GRANT
+GRANT
+Tims-MacBook-Air:dinosaurs timkur$ psql dinosaurs
+psql (11.3)
+Type "help" for help.
+
+dinosaurs=# SELECT COUNT(id) FROM dinos;
+ count 
+-------
+   331
+(1 row)
+
+dinosaurs=# SELECT name FROM dinos WHERE period = 'Jurassic';
+        name         
+---------------------
+ Yuanmousaurus
+ Yinlong
+ Yingshanosaurus
+ Yimenosaurus
+ Yangchuanosaurus
+ Yandusaurus
+ Vulcanodon
+ Tuojiangosaurus
+ Torvosaurus
+ Yunnanosaurus
+ Sinraptor
+ Stegosaurus
+ Seismosaurus
+ Segisaurus
+ Scutellosaurus
+ Scelidosaurus
+ Saurophaganax
+ Sarcosaurus
+ Shunosaurus
+ Rhoetosaurus
+ Poekilopleuron
+ Podokesaurus
+ Piatnitzkysaurus
+ Proceratosaurus
+ Patagosaurus
+ Pantydraco
+ Datousaurus
+ Ornitholestes
+ Omeisaurus
+ Nqwebasaurus
+ Monolophosaurus
+ Othnielia
+ Megalosaurus
+ Massospondylus
+ Marshosaurus
+ Mamenchisaurus
+ Lufengosaurus
+ Lophostropheus
+ Lexovisaurus
+ Metriacanthosaurus
+ Lesothosaurus
+ Kentrosaurus
+ Juravenator
+ Jingshanosaurus
+ Janenschia
+ Huayangosaurus
+ Heterodontosaurus
+ Kotasaurus
+ Guanlong
+ Giraffatitan
+ Gasosaurus
+ Gargoyleosaurus
+ Eustreptospondylus
+ Europasaurus
+ Haplocanthosaurus
+ Emausaurus
+ Euhelopus
+ Elaphrosaurus
+ Dubreuillosaurus
+ Dryosaurus
+ Diplodocus
+ Dilophosaurus
+ Dicraeosaurus
+ Cryolophosaurus
+ Compsognathus
+ Coelurus
+ Chungkingosaurus
+ Chirostenotes
+ Chinshakiangosaurus
+ Chaoyangsaurus
+ Dacentrurus
+ Cetiosaurus
+ Cetiosauriscus
+ Ceratosaurus
+ Chialingosaurus
+ Brachytrachelopan
+ Brachiosaurus
+ Bellusaurus
+ Barosaurus
+ Barapasaurus
+ Camarasaurus
+ Anchisaurus
+ Amygdalodon
+ Ammosaurus
+ Allosaurus
+ Agilisaurus
+ Apatosaurus
+ Lapparentosaurus
+ Hesperosaurus
+ Camptosaurus
+ Aardonyx
+ Archaeopteryx
+(92 rows)
+
+dinosaurs=# 
+dinosaurs=# 
+dinosaurs=# SELECT SUM(length) FROM dinos WHERE period ='Cretaceous';
+   sum   
+---------
+ 1366.45
+(1 row)
+
+dinosaurs=# SELECT name FROM dinos WHERE period ='Jurassoc' OR period = 'Cretaceous' ORDER BY species;
+          name           
+-------------------------
+ Afrovenator
+ Spinosaurus
+ Deltadromeus
+ Styracosaurus
+ Dromaeosaurus
+ Becklespinax
+ Hypacrosaurus
+ Struthiomimus
+ Leaellynasaura
+ Erlikosaurus
+ Protoceratops
+ Deinonychus
+ Centrosaurus
+ Dryptosaurus
+ Jaxartosaurus
+ Lurdusaurus
+ Hylaeosaurus
+ Shanag
+ Archaeornithomimus
+ Ampelosaurus
+ Acrocanthosaurus
+ Majungatholus
+ Lophorhothon
+ Neuquenosaurus
+ Struthiosaurus
+ Aegyptosaurus
+ Tarbosaurus
+ Chasmosaurus
+ Iguanodon
+ Cedarpelta
+ Dravidosaurus
+ Arrhinoceratops
+ Garudimimus
+ Nanshiungosaurus
+ Dromiceiomimus
+ Gallimimus
+ Gastonia
+ Protohadros
+ Homalocephale
+ Alvarezsaurus
+ Brachylophosaurus
+ Pachyrhinosaurus
+ Valdosaurus
+ Giganotosaurus
+ Eolambia
+ Corythosaurus
+ Amargasaurus
+ Irritator
+ Sinvenator
+ Therizinosaurus
+ Zuniceratops
+ Saichania
+ Gasparinisaura
+ Isisaurus
+ Unenlagia
+ Abelisaurus
+ Silvisaurus
+ Pelorosaurus
+ Anatotitan
+ Oryctodromeus
+ Magyarosaurus
+ Liaoxiornis
+ Shuvuuia
+ Malawisaurus
+ Gobisaurus
+ Sauropelta
+ Erketu
+ Bambiraptor
+ Troodon
+ Hadrosaurus
+ Hypsilophodon
+ Polacanthus
+ Segnosaurus
+ Rebbachisaurus
+ Aucasaurus
+ Tarchia
+ Achillobator
+ Hagryphus
+ Shantungosaurus
+ Sinocalliopteryx
+ Tylocephale
+ Microceratops
+ Nomingia
+ Probactrosaurus
+ Buitreraptor
+ Borogovia
+ Leptoceratops
+ Conchoraptor
+ Pinacosaurus
+ Diceratops
+ Dracorex
+ Wuerhosaurus
+ Micropachycephalosaurus
+ Achelousaurus
+ Triceratops
+ Argentinosaurus
+ Beipiaosaurus
+ Bugenasaura
+ Chubutisaurus
+ Aragosaurus
+ Urbacodon
+ Bactrosaurus
+ Fukuiraptor
+ Masiakasaurus
+ Secernosaurus
+ Lambeosaurus
+ Avaceratops
+ Nanotyrannus
+ Muttaburrasaurus
+ Goyocephale
+ Torosaurus
+ Noasaurus
+ Ligabuesaurus
+ Eotyrannus
+ Gorgosaurus
+ Albertosaurus
+ Atlascopcosaurus
+ Edmontonia
+ Tsagantegia
+ Saltasaurus
+ Ankylosaurus
+ Orodromeus
+ Prosaurolophus
+ Khaan
+ Austrosaurus
+ Nothronychus
+ Sinornithosaurus
+ Deinocheirus
+ Panoplosaurus
+ Velociraptor
+ Rinchenia
+ Graciliceratops
+ Nemegtosaurus
+ Psittacosaurus
+ Gilmoreosaurus
+ Saurornithoides
+ Brachyceratops
+ Pleurocoelus
+ Kritosaurus
+ Thescelosaurus
+ Albertaceratops
+ Ouranosaurus
+ Equijubus
+ Gryposaurus
+ Harpymimus
+ Mononykus
+ Antarctopelta
+ Alectrosaurus
+ Quaesitosaurus
+ Anchiceratops
+ Saurolophus
+ Archaeoceratops
+ Citipati
+ Utahraptor
+ Minmi
+ Maiasaura
+ Oviraptor
+ Anserimimus
+ Talarurus
+ Pelicanimimus
+ Avimimus
+ Prenocephale
+ Sinosauropteryx
+ Rugops
+ Rhabdodon
+ Hypselosaurus
+ Einiosaurus
+ Indosuchus
+ Edmontosaurus
+ Alioramus
+ Tyrannosaurus
+ Protarchaeopteryx
+ Zalmoxes
+ Mapusaurus
+ Bagaceratops
+ Nipponosaurus
+ Carcharodontosaurus
+ Sonidosaurus
+ Neovenator
+ Confuciusornis
+ Alamosaurus
+ Carnotaurus
+ Zephyrosaurus
+ Shamosaurus
+ Tanius
+ Opisthocoelicaudia
+ Stygimoloch
+ Tsintaosaurus
+ Pentaceratops
+ Paralititan
+ Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+: Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+: Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+: Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+ Liaoceratops
+: Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+ Liaoceratops
+ Microraptor
+: Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+ Liaoceratops
+ Microraptor
+ Caudipteryx
+: Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+ Liaoceratops
+ Microraptor
+ Caudipteryx
+(218 rows)
+: Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+ Liaoceratops
+ Microraptor
+ Caudipteryx
+(218 rows)
+
+: Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+ Liaoceratops
+ Microraptor
+ Caudipteryx
+(218 rows)
+
+~
+(END) Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+ Liaoceratops
+ Microraptor
+ Caudipteryx
+(218 rows)
+
+~
+~
+(END) Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+ Liaoceratops
+ Microraptor
+ Caudipteryx
+(218 rows)
+
+~
+~
+~
+(END) Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+ Liaoceratops
+ Microraptor
+ Caudipteryx
+(218 rows)
+
+~
+~
+~
+~
+(END) Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+ Liaoceratops
+ Microraptor
+ Caudipteryx
+(218 rows)
+
+~
+~
+~
+~
+~
+(END) Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+ Liaoceratops
+ Microraptor
+ Caudipteryx
+(218 rows)
+
+~
+~
+~
+~
+~
+~
+(END) Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+ Liaoceratops
+ Microraptor
+ Caudipteryx
+(218 rows)
+
+~
+~
+~
+~
+~
+~
+~
+(END) Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+ Liaoceratops
+ Microraptor
+ Caudipteryx
+(218 rows)
+
+~
+~
+~
+~
+~
+~
+~
+~
+(END) Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+ Liaoceratops
+ Microraptor
+ Caudipteryx
+(218 rows)
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END) Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+ Liaoceratops
+ Microraptor
+ Caudipteryx
+(218 rows)
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END) Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+ Liaoceratops
+ Microraptor
+ Caudipteryx
+(218 rows)
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END) Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+ Liaoceratops
+ Microraptor
+ Caudipteryx
+(218 rows)
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END) Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+ Liaoceratops
+ Microraptor
+ Caudipteryx
+(218 rows)
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END) Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+ Liaoceratops
+ Microraptor
+ Caudipteryx
+(218 rows)
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END) Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+ Liaoceratops
+ Microraptor
+ Caudipteryx
+(218 rows)
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END) Nigersaurus
+ Platyceratops
+ Suchomimus
+ Lamaceratops
+ Fukuisaurus
+ Nodosaurus
+ Jobaria
+ Tenontosaurus
+ Maxakalisaurus
+ Daspletosaurus
+ Telmatosaurus
+ Udanoceratops
+ Aralosaurus
+ Euoplocephalus
+ Stenopelix
+ Stegoceras
+ Ornithomimus
+ Supersaurus
+ Parasaurolophus
+ Baryonyx
+ Parksosaurus
+ Antarctosaurus
+ Pachycephalosaurus
+ Jinzhousaurus
+ Ingenia
+ Liaoceratops
+ Microraptor
+ Caudipteryx
+(218 rows)
+
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+dinosaurs=# SELECT name, length FROM dinos ORDER BY length;
+          name           | length 
+-------------------------+--------
+ Liaoxiornis             |   0.08
+ Confuciusornis          |   0.25
+ Shanag                  |   0.45
+ Archaeopteryx           |    0.5
+ Microceratops           |    0.5
+ Shuvuuia                |    0.6
+ Micropachycephalosaurus |    0.6
+ Compsognathus           |   0.65
+ Microraptor             |    0.8
+ Gasparinisaura          |    0.8
+ Juravenator             |    0.8
+ Pisanosaurus            |    0.9
+ Podokesaurus            |    0.9
+ Sinvenator              |      1
+ Lesothosaurus           |      1
+ Eoraptor                |      1
+ Noasaurus               |      1
+ Urbacodon               |      1
+ Mononykus               |      1
+ Caudipteryx             |      1
+ Nqwebasaurus            |      1
+ Procompsognathus        |      1
+ Bambiraptor             |      1
+ Bagaceratops            |      1
+ Sinosauropteryx         |      1
+ Chaoyangsaurus          |    1.1
+ Lycorhinus              |    1.2
+ Scutellosaurus          |    1.2
+ Heterodontosaurus       |    1.2
+ Yinlong                 |    1.2
+ Archaeoceratops         |    1.3
+ Buitreraptor            |    1.3
+ Tylocephale             |    1.4
+ Othnielia               |    1.4
+ Stenopelix              |    1.5
+ Avimimus                |    1.5
+ Agilisaurus             |    1.5
+ Segisaurus              |    1.5
+ Borogovia               |    1.5
+ Conchoraptor            |    1.5
+ Homalocephale           |    1.5
+ Nomingia                |    1.6
+ Chirostenotes           |    1.7
+ Velociraptor            |    1.8
+ Guaibasaurus            |    1.8
+ Azendohsaurus           |    1.8
+ Dromaeosaurus           |    1.8
+ Protoceratops           |    1.8
+ Khaan                   |    1.8
+ Zephyrosaurus           |    1.8
+ Coelurus                |    1.8
+ Alvarezsaurus           |      2
+ Oviraptor               |      2
+ Beipiaosaurus           |      2
+ Protarchaeopteryx       |      2
+ Pelicanimimus           |      2
+ Emausaurus              |      2
+ Leaellynasaura          |      2
+ Sinornithosaurus        |      2
+ Masiakasaurus           |      2
+ Staurikosaurus          |      2
+ Anchisaurus             |      2
+ Troodon                 |      2
+ Harpymimus              |      2
+ Goyocephale             |      2
+ Orodromeus              |      2
+ Psittacosaurus          |      2
+ Ornitholestes           |      2
+ Brachyceratops          |      2
+ Ingenia                 |      2
+ Oryctodromeus           |    2.1
+ Citipati                |    2.1
+ Syntarsus               |   2.15
+ Hypsilophodon           |    2.3
+ Avaceratops             |    2.3
+ Sinocalliopteryx        |   2.37
+ Prenocephale            |    2.4
+ Unenlagia               |    2.4
+ Stegoceras              |    2.4
+ Rinchenia               |    2.5
+ Thecodontosaurus        |    2.5
+ Struthiosaurus          |    2.5
+ Minmi                   |      3
+ Stygimoloch             |      3
+ Secernosaurus           |      3
+ Saurornithoides         |      3
+ Sarcosaurus             |      3
+ Zalmoxes                |      3
+ Atlascopcosaurus        |      3
+ Deinonychus             |      3
+ Hagryphus               |      3
+ Parksosaurus            |      3
+ Pantydraco              |      3
+ Leptoceratops           |      3
+ Yandusaurus             |      3
+ Mussaurus               |      3
+ Coelophysis             |      3
+ Dravidosaurus           |      3
+ Valdosaurus             |      3
+ Guanlong                |      3
+ Herrerasaurus           |      3
+ Erlikosaurus            |    3.4
+ Thescelosaurus          |    3.5
+ Archaeornithomimus      |    3.5
+ Dromiceiomimus          |    3.5
+ Anserimimus             |    3.5
+ Chialingosaurus         |      4
+ Gargoyleosaurus         |      4
+ Massospondylus          |      4
+ Chindesaurus            |      4
+ Chungkingosaurus        |      4
+ Ornithomimus            |      4
+ Antarctopelta           |      4
+ Dryosaurus              |      4
+ Coloradisaurus          |      4
+ Dracorex                |      4
+ Rhabdodon               |      4
+ Scelidosaurus           |      4
+ Gasosaurus              |      4
+ Silvisaurus             |      4
+ Segnosaurus             |      4
+ Edmontonia              |      4
+ Struthiomimus           |      4
+ Proceratosaurus         |    4.1
+ Piatnitzkysaurus        |    4.2
+ Fukuiraptor             |    4.2
+ Nanshiungosaurus        |    4.4
+ Lophorhothon            |    4.5
+ Huayangosaurus          |    4.5
+ Gastonia                |    4.6
+ Garudimimus             |    4.7
+ Fukuisaurus             |    4.7
+ Telmatosaurus           |      5
+ Aucasaurus              |      5
+ Nodosaurus              |      5
+ Nanotyrannus            |      5
+ Chasmosaurus            |      5
+ Polacanthus             |      5
+ Magyarosaurus           |      5
+ Ammosaurus              |      5
+ Liliensternus           |      5
+ Lexovisaurus            |      5
+ Achillobator            |      5
+ Kentrosaurus            |      5
+ Camptosaurus            |      5
+ Gobisaurus              |      5
+ Jingshanosaurus         |      5
+ Eotyrannus              |      5
+ Hylaeosaurus            |      5
+ Alectrosaurus           |      5
+ Pinacosaurus            |      5
+ Becklespinax            |      5
+ Bellusaurus             |      5
+ Riojasaurus             |   5.15
+ Nothronychus            |    5.3
+ Styracosaurus           |    5.5
+ Monolophosaurus         |    5.7
+ Bactrosaurus            |      6
+ Arrhinoceratops         |      6
+ Alioramus               |      6
+ Probactrosaurus         |      6
+ Dacentrurus             |      6
+ Ceratosaurus            |      6
+ Anchiceratops           |      6
+ Dilophosaurus           |      6
+ Centrosaurus            |      6
+ Talarurus               |      6
+ Lufengosaurus           |      6
+ Einiosaurus             |      6
+ Pachyrhinosaurus        |      6
+ Marshosaurus            |      6
+ Protohadros             |      6
+ Gallimimus              |      6
+ Achelousaurus           |      6
+ Utahraptor              |      6
+: Gastonia                |    4.6
+ Garudimimus             |    4.7
+ Fukuisaurus             |    4.7
+ Telmatosaurus           |      5
+ Aucasaurus              |      5
+ Nodosaurus              |      5
+ Nanotyrannus            |      5
+ Chasmosaurus            |      5
+ Polacanthus             |      5
+ Magyarosaurus           |      5
+ Ammosaurus              |      5
+ Liliensternus           |      5
+ Lexovisaurus            |      5
+ Achillobator            |      5
+ Kentrosaurus            |      5
+ Camptosaurus            |      5
+ Gobisaurus              |      5
+ Jingshanosaurus         |      5
+ Eotyrannus              |      5
+ Hylaeosaurus            |      5
+ Alectrosaurus           |      5
+ Pinacosaurus            |      5
+ Becklespinax            |      5
+ Bellusaurus             |      5
+ Riojasaurus             |   5.15
+ Nothronychus            |    5.3
+ Styracosaurus           |    5.5
+ Monolophosaurus         |    5.7
+ Bactrosaurus            |      6
+ Arrhinoceratops         |      6
+ Alioramus               |      6
+ Probactrosaurus         |      6
+ Dacentrurus             |      6
+ Ceratosaurus            |      6
+ Anchiceratops           |      6
+ Dilophosaurus           |      6
+ Centrosaurus            |      6
+ Talarurus               |      6
+ Lufengosaurus           |      6
+ Einiosaurus             |      6
+ Pachyrhinosaurus        |      6
+ Marshosaurus            |      6
+ Protohadros             |      6
+ Gallimimus              |      6
+ Achelousaurus           |      6
+ Utahraptor              |      6
+ Gilmoreosaurus          |      6
+: Gastonia                |    4.6
+ Garudimimus             |    4.7
+ Fukuisaurus             |    4.7
+ Telmatosaurus           |      5
+ Aucasaurus              |      5
+ Nodosaurus              |      5
+ Nanotyrannus            |      5
+ Chasmosaurus            |      5
+ Polacanthus             |      5
+ Magyarosaurus           |      5
+ Ammosaurus              |      5
+ Liliensternus           |      5
+ Lexovisaurus            |      5
+ Achillobator            |      5
+ Kentrosaurus            |      5
+ Camptosaurus            |      5
+ Gobisaurus              |      5
+ Jingshanosaurus         |      5
+ Eotyrannus              |      5
+ Hylaeosaurus            |      5
+ Alectrosaurus           |      5
+ Pinacosaurus            |      5
+ Becklespinax            |      5
+ Bellusaurus             |      5
+ Riojasaurus             |   5.15
+ Nothronychus            |    5.3
+ Styracosaurus           |    5.5
+ Monolophosaurus         |    5.7
+ Bactrosaurus            |      6
+ Arrhinoceratops         |      6
+ Alioramus               |      6
+ Probactrosaurus         |      6
+ Dacentrurus             |      6
+ Ceratosaurus            |      6
+ Anchiceratops           |      6
+ Dilophosaurus           |      6
+ Centrosaurus            |      6
+ Talarurus               |      6
+ Lufengosaurus           |      6
+ Einiosaurus             |      6
+ Pachyrhinosaurus        |      6
+ Marshosaurus            |      6
+ Protohadros             |      6
+ Gallimimus              |      6
+ Achelousaurus           |      6
+ Utahraptor              |      6
+ Gilmoreosaurus          |      6
+ Hesperosaurus           |      6
+ Majungatholus           |      6
+ Lophostropheus          |    6.2
+ Europasaurus            |    6.2
+ Elaphrosaurus           |    6.2
+ Dryptosaurus            |    6.4
+ Sauropelta              |    6.5
+ Irritator               |    6.5
+ Vulcanodon              |    6.5
+ Saichania               |    6.6
+ Pentaceratops           |    6.8
+ Wuerhosaurus            |      7
+ Tuojiangosaurus         |      7
+ Yunnanosaurus           |      7
+ Panoplosaurus           |      7
+ Tenontosaurus           |      7
+ Rugops                  |      7
+ Plateosaurus            |      7
+ Muttaburrasaurus        |      7
+ Ouranosaurus            |      7
+ Indosuchus              |      7
+ Eustreptospondylus      |      7
+ Diceratops              |      7
+ Brachylophosaurus       |      7
+ Ankylosaurus            |      7
+ Albertaceratops         |      7
+ Euoplocephalus          |      7
+ Neovenator              |    7.4
+ Torosaurus              |    7.5
+ Prosaurolophus          |    7.6
+ Carnotaurus             |    7.6
+ Sinraptor               |    7.6
+ Aardonyx                |      8
+ Aralosaurus             |      8
+ Kritosaurus             |      8
+ Pachycephalosaurus      |      8
+ Cryolophosaurus         |      8
+ Deltadromeus            |    8.1
+ Metriacanthosaurus      |    8.2
+ Tarchia                 |    8.5
+ Gorgosaurus             |    8.6
+ Saurolophus             |      9
+ Kotasaurus              |      9
+ Hypacrosaurus           |      9
+ Yimenosaurus            |      9
+ Jaxartosaurus           |      9
+ Daspletosaurus          |      9
+ Lambeosaurus            |      9
+ Triceratops             |      9
+ Lurdusaurus             |      9
+ Maiasaura               |      9
+ Malawisaurus            |      9
+ Megalosaurus            |      9
+ Abelisaurus             |      9
+ Albertosaurus           |      9
+ Afrovenator             |      9
+ Sonidosaurus            |      9
+ Hadrosaurus             |      9
+ Stegosaurus             |      9
+ Poekilopleuron          |      9
+ Avalonia                |      9
+ Anatotitan              |      9
+ Shunosaurus             |     10
+ Euhelopus               |     10
+ Neuquenosaurus          |     10
+ Gryposaurus             |     10
+ Corythosaurus           |     10
+ Cedarpelta              |     10
+ Brachytrachelopan       |     10
+ Euskelosaurus           |     10
+ Baryonyx                |     10
+ Deinocheirus            |     10
+ Torvosaurus             |     10
+ Yangchuanosaurus        |     10
+ Iguanodon               |     10
+ Tarbosaurus             |     10
+ Parasaurolophus         |     11
+ Suchomimus              |     11
+ Chinshakiangosaurus     |     11
+ Acrocanthosaurus        |     12
+ Amargasaurus            |     12
+ Opisthocoelicaudia      |     12
+ Allosaurus              |     12
+ Tsintaosaurus           |     12
+ Saltasaurus             |     12
+ Tyrannosaurus           |     12
+ Saurophaganax           |     12
+ Melanorosaurus          |     12
+ Hypselosaurus           |     12
+ Giganotosaurus          |   12.5
+ Nemegtosaurus           |     13
+ Mapusaurus              |     13
+ Edmontosaurus           |     13
+ Maxakalisaurus          |     13
+ Barapasaurus            |     14
+ Rhoetosaurus            |     15
+ Amygdalodon             |     15
+ Nigersaurus             |     15
+ Aegyptosaurus           |     15
+ Cetiosauriscus          |     15
+ Shantungosaurus         |     15
+ Austrosaurus            |     15
+ Carcharodontosaurus     |     15
+ Ampelosaurus            |     15
+ Erketu                  |     15
+ Datousaurus             |     15
+ Yuanmousaurus           |     17
+ Aragosaurus             |     18
+ Cetiosaurus             |     18
+ Patagosaurus            |     18
+ Antarctosaurus          |     18
+ Spinosaurus             |     18
+ Janenschia              |     20
+ Rebbachisaurus          |     20
+ Omeisaurus              |     20
+ Dicraeosaurus           |     20
+ Apatosaurus             |     21
+ Jobaria                 |     21
+ Alamosaurus             |     21
+ Haplocanthosaurus       |   21.5
+ Mamenchisaurus          |     22
+ Giraffatitan            |     23
+ Chubutisaurus           |     23
+ Quaesitosaurus          |     23
+ Camarasaurus            |     23
+ Barosaurus              |     24
+ Ligabuesaurus           |     24
+ Pelorosaurus            |     25
+ Diplodocus              |     26
+ Paralititan             |     28
+ Brachiosaurus           |     30
+ Supersaurus             |     35
+ Argentinosaurus         |     35
+ Seismosaurus            |     40
+ Shamosaurus             |       
+ Therizinosaurus         |       
+ Udanoceratops           |       
+ Bugenasaura             |       
+ Liaoceratops            |       
+ Platyceratops           |       
+ Tsagantegia             |       
+ Lamaceratops            |       
+ Jinzhousaurus           |       
+ Saltopus                |       
+ Isisaurus               |       
+ Dubreuillosaurus        |       
+ Graciliceratops         |       
+ Equijubus               |       
+ Eolambia                |       
+ Pleurocoelus            |       
+ Yingshanosaurus         |       
+ Tanius                  |       
+ Nipponosaurus           |       
+ Zuniceratops            |       
+ Lapparentosaurus        |       
+(331 rows)
+
+dinosaurs=# 
+dinosaurs=# 
+dinosaurs=# UPDATE dinos SET name = 'Shortie' WHERE name = 'Liaoxiornis';
+UPDATE 1
+dinosaurs=# 
+dinosaurs=# SELECT name from dinos ORDER BY name;
+          name           
+-------------------------
+ Aardonyx
+ Abelisaurus
+ Achelousaurus
+ Achillobator
+ Acrocanthosaurus
+ Aegyptosaurus
+ Afrovenator
+ Agilisaurus
+ Alamosaurus
+ Albertaceratops
+ Albertosaurus
+ Alectrosaurus
+ Alioramus
+ Allosaurus
+ Alvarezsaurus
+ Amargasaurus
+ Ammosaurus
+ Ampelosaurus
+ Amygdalodon
+ Anatotitan
+ Anchiceratops
+ Anchisaurus
+ Ankylosaurus
+ Anserimimus
+ Antarctopelta
+ Antarctosaurus
+ Apatosaurus
+ Aragosaurus
+ Aralosaurus
+ Archaeoceratops
+ Archaeopteryx
+ Archaeornithomimus
+ Argentinosaurus
+ Arrhinoceratops
+ Atlascopcosaurus
+ Aucasaurus
+ Austrosaurus
+ Avaceratops
+ Avalonia
+ Avimimus
+ Azendohsaurus
+ Bactrosaurus
+ Bagaceratops
+ Bambiraptor
+ Barapasaurus
+ Barosaurus
+ Baryonyx
+ Becklespinax
+ Beipiaosaurus
+ Bellusaurus
+ Borogovia
+ Brachiosaurus
+ Brachyceratops
+ Brachylophosaurus
+ Brachytrachelopan
+ Bugenasaura
+ Buitreraptor
+ Camarasaurus
+ Camptosaurus
+ Carcharodontosaurus
+ Carnotaurus
+ Caudipteryx
+ Cedarpelta
+ Centrosaurus
+ Ceratosaurus
+ Cetiosauriscus
+ Cetiosaurus
+ Chaoyangsaurus
+ Chasmosaurus
+ Chialingosaurus
+ Chindesaurus
+ Chinshakiangosaurus
+ Chirostenotes
+ Chubutisaurus
+ Chungkingosaurus
+ Citipati
+ Coelophysis
+ Coelurus
+ Coloradisaurus
+ Compsognathus
+ Conchoraptor
+ Confuciusornis
+ Corythosaurus
+ Cryolophosaurus
+ Dacentrurus
+ Daspletosaurus
+ Datousaurus
+ Deinocheirus
+ Deinonychus
+: Bambiraptor
+ Barapasaurus
+ Barosaurus
+ Baryonyx
+ Becklespinax
+ Beipiaosaurus
+ Bellusaurus
+ Borogovia
+ Brachiosaurus
+ Brachyceratops
+ Brachylophosaurus
+ Brachytrachelopan
+ Bugenasaura
+ Buitreraptor
+ Camarasaurus
+ Camptosaurus
+ Carcharodontosaurus
+ Carnotaurus
+ Caudipteryx
+ Cedarpelta
+ Centrosaurus
+ Ceratosaurus
+ Cetiosauriscus
+ Cetiosaurus
+ Chaoyangsaurus
+ Chasmosaurus
+ Chialingosaurus
+ Chindesaurus
+ Chinshakiangosaurus
+ Chirostenotes
+ Chubutisaurus
+ Chungkingosaurus
+ Citipati
+ Coelophysis
+ Coelurus
+ Coloradisaurus
+ Compsognathus
+ Conchoraptor
+ Confuciusornis
+ Corythosaurus
+ Cryolophosaurus
+ Dacentrurus
+ Daspletosaurus
+ Datousaurus
+ Deinocheirus
+ Deinonychus
+ Deltadromeus
+: Bambiraptor
+ Barapasaurus
+ Barosaurus
+ Baryonyx
+ Becklespinax
+ Beipiaosaurus
+ Bellusaurus
+ Borogovia
+ Brachiosaurus
+ Brachyceratops
+ Brachylophosaurus
+ Brachytrachelopan
+ Bugenasaura
+ Buitreraptor
+ Camarasaurus
+ Camptosaurus
+ Carcharodontosaurus
+ Carnotaurus
+ Caudipteryx
+ Cedarpelta
+ Centrosaurus
+ Ceratosaurus
+ Cetiosauriscus
+ Cetiosaurus
+ Chaoyangsaurus
+ Chasmosaurus
+ Chialingosaurus
+ Chindesaurus
+ Chinshakiangosaurus
+ Chirostenotes
+ Chubutisaurus
+ Chungkingosaurus
+ Citipati
+ Coelophysis
+ Coelurus
+ Coloradisaurus
+ Compsognathus
+ Conchoraptor
+ Confuciusornis
+ Corythosaurus
+ Cryolophosaurus
+ Dacentrurus
+ Daspletosaurus
+ Datousaurus
+ Deinocheirus
+ Deinonychus
+ Deltadromeus
+ Diceratops
+ Dicraeosaurus
+ Dilophosaurus
+ Diplodocus
+ Dracorex
+ Dravidosaurus
+ Dromaeosaurus
+ Dromiceiomimus
+ Dryosaurus
+ Dryptosaurus
+ Dubreuillosaurus
+ Edmontonia
+ Edmontosaurus
+ Einiosaurus
+ Elaphrosaurus
+:
